@@ -1,0 +1,9 @@
+# 对所有文本文件强制使用 LF
+* text=auto
+# 确保某些文件始终是 LF 格式
+*.sh text eol=lf
+*.xml text eol=lf
+*.svg text eol=lf
+# 二进制文件不进行行尾符转换
+*.png binary
+*.jpg binary

@@ -1,0 +1,82 @@
+/* 首页部分css样式 */
+#home section {
+    display: none; /* 默认隐藏 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; /* 设置背景 */
+    color: #000; /* 文本颜色 */
+    padding: 20px;
+    box-sizing: border-box; /* 包括内边距计算宽高 */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#home section.active {
+    display: block; /* 显示激活内容 */
+    position: relative;
+    opacity: 1;
+}
+
+#home .text-content-img-container {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    gap: 20px; /* 设置两者之间的间距 */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#home .text-content {
+    max-width: 600px; /* 可设置一个最大宽度以防止内容过宽 */
+}
+
+#home .text-content h1 {
+    font-size: 2.5em; /* 设置主标题的字体大小为 2.5 倍于默认字体大小 */
+    margin-bottom: 20px; /* 为主标题底部添加 20px 的外边距，与下方内容保持间距 */
+}
+
+#home .text-content p {
+    font-weight: bold;
+    display: block;
+    font-size: 1.1em;
+    color: gray;
+    font-style: italic;
+}
+
+#home .buttons a {
+    display: inline-block; /* 将链接设置为行内块元素，使其可以设置宽高，并且多行链接排列时会换行 */
+    padding: 10px 20px; /* 为链接内容设置上下各 10px，左右各 20px 的内边距 */
+    margin: 5px; /* 为每个链接设置 5px 的外边距，使多个链接之间有一定间隔 */
+    background-color: #6a5acd; /* 设置链接的背景颜色为浅紫色（Hex 代码） */
+    color: white; /* 设置链接文字颜色为白色 */
+    text-decoration: none; /* 去除链接的下划线效果 */
+    border-radius: 5px; /* 为链接按钮添加圆角效果，半径为 5px */
+}
+
+#home .text-content-img-container img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+    border-radius: 15px; /* 设置图片的圆角半径为 15px，使图片的四个角变得圆润 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 为图片添加阴影效果，x 方向偏移 0px，y 方向偏移 4px，模糊半径为 8px，阴影颜色为透明黑 */
+    margin-left: 50px;
+}
+
+#home .info {
+    margin: 0 auto;
+    width: 80%;
+    display: flex; /* 使用 Flexbox 布局，将 .info 容器的子元素排列成横向布局 */
+    justify-content: space-around; /* 将子元素均匀分布在容器内，每个子元素之间留出相等的空白 */
+    margin-top: 50px; /* 为 .info 容器顶部添加 50px 的外边距，与上方内容保持间距 */
+    border-top: 1px solid rgb(212, 212, 212); /* 顶部灰色线条 */
+    border-bottom: 1px solid rgb(212, 212, 212); /* 底部灰色线条 */
+    padding: 20px 0; /* 添加内边距，使内容与线条有一定距离 */
+}
+
+#home .info div {
+    flex: 1;
+    text-align: center; /* 将每个 .info 容器内的子元素的内容水平居中对齐 */
+}

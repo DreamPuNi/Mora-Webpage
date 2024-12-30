@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"> <!-- 定义网页的字符编码，确保文字正确显示 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- 设置页面在不同设备上的显示方式 -->
+    <title>HermaeusMora</title> <!-- 描述网页内容，供搜索引擎使用 标题会显示在浏览器标签页上-->
+    <link rel="icon" href="assets/icons/favicon.ico"> <!-- 网页的图标，显示在浏览器标签的左边 -->
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/images.css">
+    <link rel="stylesheet" href="assets/css/books.css">
+    <link rel="stylesheet" href="assets/css/infocenter.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="assets/icons/favicon.ico" alt="logo" class="logo-icon">
+            <span>HermaeusMora</span>
+        </div>
+        <div class="links">
+            <a href="#home" class="nav-link" data-section="home">阿波菲斯</a> <!-- 没啥说的，就是首页 -->
+            <a href="#images" class="nav-link" data-section="images">心魄</a>
+            <a href="#books" class="nav-link" data-section="books">晦典</a>
+            <a href="#skills">智典</a> <!-- 技能培训类及工具类 -->
+            <a href="#tools">工具</a>
+            <a href="#infocenter" class="nav-link" data-section="infocenter">晦朔</a>
+            <a href="#chatmsg">命运潮汐</a> <!-- Ai对话及留言版类 -->
+        </div>
+        <div class="actions">
+            <button id="theme-toggle" class="icon-button">
+                <img src="assets/icons/lightbulb.svg" alt="Toggle Night Mode">
+            </button>
+            <select id="language-select">
+                <option value="zh">中文</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- 首页 -->
+    <div id="home" class="section active">
+        <div class="text-content-img-container">
+            <div class="text-content">
+                <h1>HermaeusMora</h1>
+                <p >听闻我的名号，凡人。你渴求知识与真理，而我是知识的化身。凡世间的奥秘，无论深藏何处，终将归于我的典籍。</p>
+                <p>说吧，你所求为何？是否有新的秘密愿奉献于我的无尽藏书？亦或是寻求从混沌中攫取一线智慧的启迪？</p>
+                <div class="buttons">
+                    <a href="#register">异典</a>
+                    <a href="#download">晦典</a>
+                </div>
+            </div>
+            <img src="assets/images/home-wallpaper/homepage-001.jpg" alt="Game image">
+        </div>
+        <div class="info">
+            <div>
+                <p>开服时间</p>
+                <p>2024-05-14</p>
+            </div>
+            <div>
+                <p>访问人次</p>
+                <p>322</p>
+            </div>
+            <div>
+                <p>注册用户</p>
+                <p>2780+</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 心魄页面 -->
+    <div id="images" class="section">
+        <div class="slideshow">
+            <div id="slides" class="slides"></div>
+            <div class="controls">
+                <button class="control" id="prev">&#10094; </button>
+                <button class="control" id="next"> &#10095;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 晦典页面 -->
+    <div id="books" class="section">
+        <div class="Centered-title-text">
+            <h1>晦典 - 艺术与思想</h1>
+            <p>人类艺术与思想的瑰宝</p>
+        </div>
+        <div class="tags">
+            <button class="tag-button" data-tag="all">全部</button>
+            <button class="tag-button" data-tag="book">书籍</button>
+            <button class="tag-button" data-tag="movie">影音</button>
+        </div>
+        <div id="card-library" class="card-libiary"></div>
+    </div>
+
+    <!-- 数据汇总 -->
+    <div id="infocenter" class="section">
+        <div class="Centered-title-text">
+            <h1>晦朔 - 数据中心</h1>
+            <p>这里是常用的数据的汇总</p>
+        </div>
+        <div class="card-libiary">
+            <div class="info-card">
+                <a href="activity/100.html">
+                    <canvas id="exchangeRateChart" width="300" height="200">七天汇率变化图</canvas>
+                </a>
+                <div class="info-body">
+                    <div class="info-detail">
+                        <small class="text-uppercase fw-semibold ls-md">时间范围：2023-12-25 To Now</small>
+                        <a class="text-reset" href="activity/100.html">人民币兑美元汇率</a>
+                        <small class="text-uppercase fw-semibold ls-md">更新时间：凌晨02:00</small>
+                    </div>
+                    <div class="info-tag">
+                        <span class="tag" href="activity/100.html">经济</span>
+                        <span class="tag">货币</span>
+                    </div>
+                </div>
+            </div>
+            <div class="info-card">
+                <img src="assets/images/home-wallpaper/homepage-001.jpg" alt="全国用电量统计">
+                <div class="info-body">
+                    <div class="info-detail">
+                        <small class="text-uppercase fw-semibold ls-md">时间范围：2024-12-15 2025-1-28</small>
+                        <a class="text-reset" href="activity/100.html">中国用电量基本信息</a>
+                        <small class="text-uppercase fw-semibold ls-md">发布时间：2024-12-15 17:31:50</small>
+                    </div>
+                    <div class="info-tag">
+                        <span class="tag">经济</span>
+                        <span class="tag">商品</span>
+                    </div>
+                </div>
+            </div>
+            <div class="info-card">
+                <img src="assets/images/home-wallpaper/homepage-001.jpg" alt="全国用电量统计">
+                <div class="info-body">
+                    <div class="info-detail">
+                        <small class="text-uppercase fw-semibold ls-md">时间范围：2024-12-15 2025-1-28</small>
+                        <a class="text-reset" href="activity/100.html">中国铁路货运量</a>
+                        <small class="text-uppercase fw-semibold ls-md">发布时间：2024-12-15 17:31:50</small>
+                    </div>
+                    <div class="info-tag">
+                        <span class="tag">经济</span>
+                        <span class="tag">运输</span>
+                    </div>
+                </div>
+            </div>
+            <div class="info-card">
+                <img src="assets/images/home-wallpaper/homepage-001.jpg" alt="全国用电量统计">
+                <div class="info-body">
+                    <div class="info-detail">
+                        <small class="text-uppercase fw-semibold ls-md">时间范围：2024-12-15 2025-1-28</small>
+                        <a class="text-reset" href="activity/100.html">内裤指数和口红指数</a>
+                        <small class="text-uppercase fw-semibold ls-md">发布时间：2024-12-15 17:31:50</small>
+                    </div>
+                    <div class="info-tag">
+                        <span class="tag">经济</span>
+                        <span class="tag">商品</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>      
+
+    <!-- JS脚本 -->
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/images-loadimg.js"></script>
+    <script src="assets/js/books-indocards.js"></script>
+    <script src="assets/js/infocenter-canvas.js"></script>
+</body>
+</html>

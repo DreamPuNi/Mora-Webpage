@@ -1,0 +1,105 @@
+/* 数据界面css样式 */
+#infocenter {
+    flex-wrap: wrap; /* 允许换行 */
+    gap: 16px; /* 卡片之间的间距 */
+    justify-content:center; /* 子元素在中间对齐 */
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+#infocenter .Centered-title-text {
+    display: block; /* 确保 h2 独占一行 */
+    width: 100%; /* 确保块级元素占满整行 */
+}
+
+#infocenter .Centered-title-text h1 {
+    text-align: center; /* 文本居中对齐 */
+    color: #000000; /* 设置文字颜色为黑色 */
+    font-size: 2.5em; /* 设置主标题的字体大小为 2.5 倍于默认字体大小 */
+    margin-bottom: 20px; /* 标题与下一部分的间距 */
+}
+
+#infocenter .Centered-title-text p {
+    text-align: center;
+    color: gray;
+    font-size: 1em;
+}
+
+#infocenter .card-libiary {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 16px;
+    justify-content: center;
+}
+
+#infocenter .info-card {
+    display: flex; /* 图片和文字一行排列 */
+    flex: 0 0 calc(50%-16px); /* 双列，减去间距 */
+    flex-direction: row; /* 默认横向排列 */
+    align-items: center; /* 垂直居中 */
+    width: 48%; /* 设置为双列显示 */
+    height: 203px;
+    border: 1px solid #ddd; /* 简单的边框 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 卡片阴影 */
+    background: #fff; 
+    border-radius: 8px; /* 圆角 */
+    box-sizing: border-box; /* 包含内边距和边框 */
+}
+
+#infocenter .info-card img {
+    flex: 1;
+    width: 40%;
+    height: 100%;
+    border-radius: 4px; /* 图片圆角 */
+}
+
+#infocenter .info-body {
+    margin-left: 16px;
+    flex: 0 0 50%; /* 0存在剩余空间也不放大，0空间不足也不缩小，分配多余空间之前，项目占据的主轴空间 */
+    display: flex; /* 文字区域使用 Flex */
+    flex-direction: column; /* 垂直排列文字 */
+    justify-content: flex-start; /* 文字从顶部开始 */
+    
+}
+
+#infocenter .info-detail small,
+.info-detail .text-reset {
+    display: block; /* 每个文字块单独一行 */
+    margin-bottom: 8px; /* 设置文字之间的间距 */
+}
+
+#infocenter .info-detail small {
+    color: gray;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#infocenter .info-detail .text-reset {
+    color: #000 !important; /* 强制字体为黑色 */
+    text-decoration: none; /* 移除下划线 */
+    font-weight: 600;
+    font-size: 1.3em;
+}
+
+#infocenter .info-tag {
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* 垂直居中 */
+}
+
+#infocenter .tag {
+    display: flex;
+    background-color: #7a67ee;
+    color: #f8f8ff;
+    border-radius: 4px;
+    height: 1.5em;
+    width: auto;
+    padding: 0 0.5em;
+    font-size: 0.75em;
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    margin: 3px;
+}

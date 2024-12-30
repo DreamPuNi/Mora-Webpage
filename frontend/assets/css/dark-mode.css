@@ -1,0 +1,66 @@
+/* 首页夜间模式 */
+body.dark-mode {
+    background-color: #000000;
+    color: #fff;
+}
+
+body.dark-mode nav {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+body.dark-mode nav a {
+    color: #ddd;
+}
+
+body.dark-mode nav a:hover {
+    color: #ffffff;
+}
+
+body.dark-mode .icon-button img {
+    filter: invert(1); /* 完全反色 */
+}
+
+body.dark-mode .section {
+    background-color: #000000;
+    color: #ddd;
+}
+
+body.dark-mode #language-select {
+    background-color: #333;
+    color: #fff;
+}
+
+/* 心魄页夜间模式 */
+body.dark-mode #images .slideshow{
+    background-color: #000000;
+    color: #fff;
+}
+
+/* 晦典页夜间模式 */
+body.dark-mode #books .Centered-title-text h1{
+    color: #fff;
+}
+
+body.dark-mode #books .information span{
+    color: #fff;
+}
+
+/* 信息页夜间模式 */
+body.dark-mode #infocenter .Centered-title-text h1 {
+    color: white;
+}
+
+body.dark-mode #infocenter .info-card {
+    border: 1px solid black; /* 简单的边框 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 卡片阴影 */
+    background: rgb(27, 27, 27); 
+}
+
+body.dark-mode #infocenter .info-detail small {
+    color: rgb(194, 194, 194);
+}
+
+body.dark-mode #infocenter .info-detail .text-reset {
+    color: rgb(255, 255, 255) !important;
+}

@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/LogBackground.jpg');
+    background-size: cover; /* 调整图片填充方式 */
+    background-position: center; /* 图片居中 */
+    background-repeat: no-repeat;
+}
+
+h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 3rem;
+}
+
+form {
+    display: inline-block;
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.3); /* 半透明背景 */
+    border-radius: 15px;
+    backdrop-filter: blur(3px); /* 毛玻璃效果 */
+    -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影以提升效果 */
+}
+
+label{
+    display: inline-block;
+    color: #fff;
+    margin:10px;
+}
+
+input{
+    box-sizing: border-box;
+    display: inline-block;
+    appearance: none;
+    background-clip: padding-box;
+    background-color: #fff;
+    border: 1px solid #46635e;
+    border-radius: 5px;
+    color: #000000;
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: .5rem 1rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    width: 100%;
+}
+
+a{
+    margin:5px;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+button{
+    margin-top:15px;
+    border:none;
+    padding: 10px 15px; /* 为链接内容设置上下各 10px，左右各 20px 的内边距 */
+    background-color: #46635e; /* 设置链接的背景颜色为浅紫色（Hex 代码） */
+    color: white !important; /* 设置链接文字颜色为白色 */
+    font-size: 20px;
+    text-decoration: none !important; /* 去除链接的下划线效果 */
+    border-radius: 5px; /* 为链接按钮添加圆角效果，半径为 5px */
+    width:100%;
+}
+
+/* 登陆界面特殊设置 */
+.user_state{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#remember_me {
+    appearance:auto;
+    display:revert;
+    width:15px;
+}
+
+/* 注册界面特殊设置 */
+.helptext {
+    color: #eee;
+}
+
+li{
+    color: #eee;
+}
+
+ul li::marker {
+    color: #eee; /* 改变前方圆点的颜色 */
+    font-size: 1.2em; /* 可调整圆点大小 */
+}

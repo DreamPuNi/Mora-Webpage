@@ -6,21 +6,23 @@ document.addEventListener("DOMContentLoaded", () => {
     async function loadBooks(tag = "all") {
         try {
             // 发起Fetch请求，向后端获取指定标签的书籍数据
-            const response = await fetch(`http://127.0.0.1:8000/api/books_info?tag=${tag}`);
+            const response = await fetch(`http://127.0.0.1:8000/api/books_info/?tag=${tag}`);
+            const result = await response.json();
             // 解析返回的JSON数据
-            const data = await response.json();
+            const data = result.data;
 
             // 清空书籍容器中的旧内容
             libraryContainer.innerHTML = "";
 
             // 遍历返回的数据，为每本书创建对应的HTML结构
             data.forEach((book) => {
+                const book_cover = `http://127.0.0.1:8000${book.cover}`;
                 // 动态生成书籍卡片HTML
                 const card = `
                     <div class="info-card">
                         <!-- 封面图片，链接到书籍详情页 -->
                         <a class="cover" href="${book.link}">
-                            <img src="${book.cover}" alt="${book.title}">
+                            <img src="${book_cover}" alt="${book.title}">
                         </a>
                         <!-- 信息展示部分 -->
                         <div class="information">

@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- 设置页面在不同设备上的显示方式 -->
     <title>HermaeusMora</title> <!-- 描述网页内容，供搜索引擎使用 标题会显示在浏览器标签页上-->
     <link rel="icon" href="assets/icons/favicon.ico"> <!-- 网页的图标，显示在浏览器标签的左边 -->
-    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="assets/css/images.css">
     <link rel="stylesheet" href="assets/css/books.css">
+    <link rel="stylesheet" href="assets/css/wisdom.css">
     <link rel="stylesheet" href="assets/css/infocenter.css">
 </head>
 <body>
@@ -22,7 +23,7 @@
             <a href="#home" class="nav-link" data-section="home">阿波菲斯</a> <!-- 没啥说的，就是首页 -->
             <a href="#images" class="nav-link" data-section="images">心魄</a>
             <a href="#books" class="nav-link" data-section="books">晦典</a>
-            <a href="#skills">智典</a> <!-- 技能培训类及工具类 -->
+            <a href="#wisdom" class="nav-link" data-section="wisdom">智典</a>
             <a href="#tools">工具</a>
             <a href="#infocenter" class="nav-link" data-section="infocenter">晦朔</a>
             <a href="#chatmsg">命运潮汐</a> <!-- Ai对话及留言版类 -->
@@ -31,10 +32,26 @@
             <button id="theme-toggle" class="icon-button">
                 <img src="assets/icons/lightbulb.svg" alt="Toggle Night Mode">
             </button>
-            <select id="language-select">
-                <option value="zh">中文</option>
-                <option value="en">English</option>
-            </select>
+            <div class="language-toggle">
+                <button id="language-button"  class="icon-button">
+                    <img src="assets/icons/Language-toggle.png" alt="Language Icon">
+                </button>
+                <div id="language-options" class="hidden">
+                    <a href="?lang=en" class="language-option">English</a>
+                    <a href="?lang=zh" class="language-option">中文</a>
+                    <a href="?lang=es" class="language-option">Español</a>
+                </div>
+            </div>
+            <div class="user-info">
+                <button id="user-button" class="icon-button">
+                    <img src="assets/icons/user.png" alt="User-avator">
+                </button>
+                <div id="user-info" class="hidden">
+                    <img src="assets/icons/user.png">
+                    <h4>你还没有登陆</h4>
+                    <a href="http://127.0.0.1:8000/users/login/?next=http://127.0.0.1:5500/index.html" class="user-link">登陆</a>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -46,8 +63,8 @@
                 <p >听闻我的名号，凡人。你渴求知识与真理，而我是知识的化身。凡世间的奥秘，无论深藏何处，终将归于我的典籍。</p>
                 <p>说吧，你所求为何？是否有新的秘密愿奉献于我的无尽藏书？亦或是寻求从混沌中攫取一线智慧的启迪？</p>
                 <div class="buttons">
-                    <a href="#register">异典</a>
-                    <a href="#download">晦典</a>
+                    <a href="http://127.0.0.1:8000/users/login/?next=/users/profile/">登陆</a>
+                    <a href="http://127.0.0.1:8000/users/logout/">登出</a>
                 </div>
             </div>
             <img src="assets/images/home-wallpaper/homepage-001.jpg" alt="Game image">
@@ -91,6 +108,34 @@
             <button class="tag-button" data-tag="movie">影音</button>
         </div>
         <div id="card-library" class="card-libiary"></div>
+    </div>
+
+    <!-- 智典页面 -->
+    <div id="wisdom" class="section">
+        <div class="sidebar">
+            <h3>章节导航</h3>
+            <ul>
+              <li onclick="scrollToSection('section1')">章节 1</li>
+              <li onclick="scrollToSection('section2')">章节 2</li>
+              <li onclick="scrollToSection('section3')">章节 3</li>
+            </ul>
+          </div>
+          <div class="content">
+            <h1 id="section1">章节 1</h1>
+            <p>这里是章节 1 的内容。</p>
+            <h1 id="section2">章节 2</h1>
+            <p>这里是章节 2 的内容。</p>
+            <h1 id="section3">章节 3</h1>
+            <p>这里是章节 3 的内容。</p>
+          </div>
+          <div class="toc">
+            <h3>快速定位</h3>
+            <ul>
+              <li><a href="#section1">章节 1</a></li>
+              <li><a href="#section2">章节 2</a></li>
+              <li><a href="#section3">章节 3</a></li>
+            </ul>
+          </div>
     </div>
 
     <!-- 数据汇总 -->
@@ -162,7 +207,7 @@
     </div>      
 
     <!-- JS脚本 -->
-    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/nav.js"></script>
     <script src="assets/js/images-loadimg.js"></script>
     <script src="assets/js/books-indocards.js"></script>
     <script src="assets/js/infocenter-canvas.js"></script>

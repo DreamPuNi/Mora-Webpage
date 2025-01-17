@@ -1,0 +1,86 @@
+/* 侧边栏 */
+.aside{
+    position: fixed;
+    top: 0;
+    z-index: 30;
+    width: 2.5em;
+    height: 100%;
+    background: #e5e4db;
+    margin-left: 0;
+}
+
+.control_panel {
+    list-style: none; /* 移除默认的小圆点 */
+    padding: 0;       /* 去掉内边距，确保对齐 */
+    margin: 0;        /* 去掉外边距，确保对齐 */
+}
+
+.sep{
+    margin: 10px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* 翻页阅读模式下显示翻页图标 */
+#layout[data-mode="page"] > a > #icon-page {
+    display: block !important; /* 使用 !important 确保规则生效 */
+}
+
+#layout[data-mode="page"] > a > #icon-scroll {
+    display: none !important;
+}
+
+#layout[data-mode="scroll"] > a > #icon-page {
+    display: none !important;
+}
+
+#layout[data-mode="scroll"] > a > #icon-scroll {
+    display: block !important;
+}
+
+.sep:hover .hover-stroke {
+    stroke: #6a5acd !important;
+}
+
+.sep:hover rect:not([stroke]) , 
+.sep:hover polygon {
+    fill: #6a5acd !important;
+}
+
+/* 阅读文本栏 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .header {
+    background: #6200ea;
+    color: white;
+    padding: 15px;
+    text-align: center;
+  }
+  .section {
+    padding: 20px;
+  }
+  #text-viewer {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    margin-bottom: 20px;
+  }
+  #pdf-viewer {
+    border: 1px solid #ccc;
+    height: 600px;
+    overflow: auto;
+  }

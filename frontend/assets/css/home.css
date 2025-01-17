@@ -50,7 +50,7 @@
     display: inline-block; /* 将链接设置为行内块元素，使其可以设置宽高，并且多行链接排列时会换行 */
     padding: 10px 20px; /* 为链接内容设置上下各 10px，左右各 20px 的内边距 */
     margin: 5px; /* 为每个链接设置 5px 的外边距，使多个链接之间有一定间隔 */
-    background-color: #6a5acd; /* 设置链接的背景颜色为浅紫色（Hex 代码） */
+    background-color: #8b3dff; /* 设置链接的背景颜色为浅紫色（Hex 代码） */
     color: white; /* 设置链接文字颜色为白色 */
     text-decoration: none; /* 去除链接的下划线效果 */
     border-radius: 5px; /* 为链接按钮添加圆角效果，半径为 5px */

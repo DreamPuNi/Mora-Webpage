@@ -1,0 +1,163 @@
+/* 默认隐藏所有内容部分 */
+.section {
+    display: none;
+    visibility: hidden;
+    position: absolute; /* 防止布局干扰 */
+}
+
+/* 仅仅显示当前激活部分 */
+.section.active {
+    display: block;
+    visibility: visible;
+    position: relative;
+}
+
+body {
+    margin: 0; /* 移除 body 默认的外边距，使内容紧贴浏览器窗口 */
+    font-family: Arial, sans-serif; /* 设置页面文字的默认字体为 Arial，如果 Arial 不可用则使用 sans-serif 字体 */
+    background-color: #ffffff; /* 设置页面的背景颜色为浅灰色 */
+    padding: 0;
+}
+
+/* 导航栏css样式 */
+nav {
+    background-color: #f3f3f3; /* 设置导航栏的背景颜色为白色 */
+    color: rgb(0, 0, 0); /* 设置导航栏文字的颜色为黑色 */
+    padding: 10px 20px; /* 为导航栏内容设置内边距：上下 10px，左右 20px */
+    display: flex; /* 将导航栏设置为 Flexbox 布局，方便对子元素进行排列 */
+    justify-content: space-between; /* 将导航栏中的子元素（比如 logo 和链接）左右对齐，留出中间的空间 */
+    align-items: center; /* 垂直方向上将导航栏中的子元素居中对齐 */
+}
+
+nav .logo{
+    display: flex; /* 使用 Flexbox 布局，将 logo 图片与文字横向排列 */
+    align-items: center; /* 垂直方向居中 */
+}
+
+nav .logo img.logo-icon{
+    height: 24px; /* 设置 logo 图片的高度 */
+    margin-right: 10px; /* 设置图片与文字之间的间距 */
+}
+
+nav .links {
+    display: flex; /* 使用 Flexbox 布局，将链接横向排列 */
+    justify-content: center; /* 居中排列 */
+    flex-grow: 1; /* 占用多余空间，保持中间部分在布局中居中 */
+}
+
+nav .links a {
+    color: gray; /* 设置导航栏链接的文字颜色为灰色 */
+    text-decoration: none; /* 移除链接的下划线效果 */
+    margin: 0 15px; /* 为链接设置左右外边距，使链接之间有一定的间隔 */
+    font-size: 16px; /* 设置链接字体大小 */
+    padding: 5px 10px; /* 为链接添加内边距，增大点击区域 */
+    transition: all 0.3s ease; /* 添加过渡效果，让颜色和背景变化更加平滑 */
+}
+
+nav .links a:hover {
+    color: rgb(255, 255, 255); /* 当鼠标悬停时，将文字颜色变为黑色 */
+    background-color: #8b3dff; /* 当鼠标悬停时，链接背景变为浅灰色 */
+    border-radius: 5px; /* 添加圆角，增强视觉效果 */
+}
+
+/* 导航栏右侧功能按钮 */
+nav .actions {
+    display: flex; /* 将灯泡和语言选择器横向排列 */
+    align-items: center; /* 垂直居中对齐 */
+    gap: 15px; /* 设置灯泡和语言选择器之间的间距 */
+}
+
+nav .logo,
+nav .actions {
+    flex-shrink: 0; /* 防止它们在空间不足时被压缩 */
+}
+
+.icon-button{
+    background: none; /* 移除按钮的背景 */
+    border: none; /* 移除按钮的边框 */
+    cursor: pointer; /* 鼠标悬停时显示手型图标 */
+    padding: 0; /* 移除内边距 */
+}
+
+.icon-button img{
+    height: 24px; /* 设置图标大小 */
+    width: 24px;
+    transition: transform 0.2s; /* 添加缩放动画 */
+}
+
+.icon-button:hover img{
+    transform: scale(1.1); /* 鼠标悬停时放大图标 */
+}
+
+.hidden{
+    display: none !important;
+}
+
+.language-toggle,
+.user-info{
+    position: relative;
+}
+
+#language-options{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    width: 150px;
+}
+
+.language-option{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.language-option:hover {
+    background-color: #8b3dff;
+    color: #ffffff;
+}
+
+/* 用户信息 */
+#user-info{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#user-info img{
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+    display: block;
+}
+
+.user-link{
+    display: block;
+    padding: 10px;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    color: #000000;
+    background-color: #eeeded;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.user-link:hover{
+    background-color: #8b3dff !important;
+    color: #ffffff;
+}

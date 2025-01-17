@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"> <!-- 定义网页的字符编码，确保文字正确显示 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- 设置页面在不同设备上的显示方式 -->
+    <title>HermaeusMora</title> <!-- 描述网页内容，供搜索引擎使用 标题会显示在浏览器标签页上-->
+    <link rel="icon" href="../assets/icons/favicon.ico"> <!-- 网页的图标，显示在浏览器标签的左边 -->
+    <link rel="stylesheet" href="../assets/css/activity.100.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js"></script>
+</head>
+<body>
+    <div id="reader" class="">
+        <aside class="aside">
+            <ul class="control_panel">
+                <li id="layout" class="sep" data-helper="阅读模式" data-mode="page">
+                    <a class="icon-layout" href="#" title="阅读模式">
+                        <svg id="icon-page" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+                            <!-- 左侧书脊 -->
+                            <defs>
+                                <mask id="no-left-border">
+                                    <!-- 完全显示部分（白色表示可见区域） -->
+                                    <rect x="0" y="0" width="40" height="40" fill="white" />
+                                    <!-- 隐藏左边的边框（黑色表示隐藏区域） -->
+                                    <rect x="0" y="0" width="3" height="40" fill="black" />
+                                </mask>
+                            </defs>
+                            <rect x="2" y="2" width="6" height="36" fill="#e5e4db"  stroke="#6c757d" stroke-width="2" vector-effect="non-scaling-stroke" rx="1" ry="1" mask="url(#no-left-border)" class="hover-stroke"/>
+                            <!-- 书页的背景 -->
+                            <rect x="12" y="2" width="24" height="36" fill="#e5e4db" stroke="#6c757d" stroke-width="2" vector-effect="non-scaling-stroke" rx="1" ry="1" class="hover-stroke"/>
+                            <!-- 水平线 -->
+                            <rect x="14" y="8" width="20" height="2" fill="#6c757d" />
+                            <rect x="14" y="14" width="18" height="1" fill="#6c757d" />
+                            <rect x="14" y="20" width="16" height="1" fill="#6c757d" />
+                            <rect x="14" y="26" width="20" height="2" fill="#6c757d" />
+                            <rect x="14" y="32" width="16" height="1" fill="#6c757d" />
+                        </svg>
+                        <svg id="icon-scroll" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" style="display: none;">
+                            <defs>
+                                <mask id="no-top-border">
+                                    <rect x="0" y="0" width="40" height="40" fill="white" />
+                                    <rect x="6" y="0" width="28" height="3" fill="black" />
+                                </mask>
+                            </defs>
+                            <rect x="5" y="0" width="30" height="6" fill="#e5e4db"  stroke="#6c757d" stroke-width="2" vector-effect="non-scaling-stroke" rx="1" ry="1" mask="url(#no-top-border)" class="hover-stroke"/>
+                            <rect x="5" y="10" width="30" height="36" fill="#e5e4db" stroke="#6c757d" stroke-width="2" vector-effect="non-scaling-stroke" rx="1" ry="1" class="hover-stroke"/>
+                            <rect x="8" y="14" width="24" height="2" fill="#6c757d" />
+                            <rect x="8" y="20" width="18" height="1" fill="#6c757d" />
+                            <rect x="8" y="24" width="16" height="1" fill="#6c757d" />
+                            <rect x="8" y="30" width="20" height="2" fill="#6c757d" />
+                            <rect x="8" y="36" width="16" height="1" fill="#6c757d" />
+                        </svg>
+                    </a>
+                </li>
+                <li id="annotation" class="sep" data-helper="批注">
+                    <a class="icon-annotation" href="#" title="批注">
+                        <svg id="icon-annotation" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" >
+                            <polygon points="36,3 32,2 26,31 27,38 30,32" fill="#6c757d" />
+                            <rect x="3" y="5" width="25" height="2" fill="#6c757d" />
+                            <rect x="3" y="12" width="12" height="1" fill="#6c757d" />
+                            <rect x="3" y="19" width="18" height="1" fill="#6c757d" />
+                            <rect x="3" y="25" width="20" height="2" fill="#6c757d" />
+                            <rect x="3" y="32" width="10" height="1" fill="#6c757d" />
+                            <rect x="3" y="38" width="35" height="1" fill="#6c757d" />
+                        </svg>
+                    </a>
+                </li>
+                <li id="comment" class="sep" data-helper="评论">
+                    <a class="icon-comment" href="#" title="评论">
+                        <svg id="icon-comment" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" >
+                            <rect x="5" y="5" width="30" height="30" rx="5" ry="5" fill="#e5e4db" stroke="#6c757d" stroke-width="2" />
+                            <polygon points="8,35 6,40 17,35" fill="#6c757d" stroke="#6c757d" stroke-width="2" />
+                            <circle cx="15" cy="20" r="2" fill="#6c757d" />
+                            <circle cx="20" cy="20" r="2" fill="#6c757d" />
+                            <circle cx="25" cy="20" r="2" fill="#6c757d" />
+                          </svg>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <div class="container">
+            <div class="header">
+              <h1>Ebook Viewer</h1>
+            </div>
+            <div class="section">
+              <h2>Text Format Ebook</h2>
+              <div id="text-viewer">
+                <pre>
+                  Chapter 1: Introduction
+                  This is an example of a text-based ebook. You can use <pre> tags to format and display simple text content.
+        
+                  Chapter 2: Learning
+                  Remember to format the content properly to enhance readability. For example, separate paragraphs clearly.
+        
+                  Chapter 3: Conclusion
+                  For advanced features, like searching, navigation, or annotations, HTML-based or PDF-based rendering is recommended.
+                </pre>
+              </div>
+              <h2>PDF Format Ebook</h2>
+              <div id="pdf-viewer"></div>
+            </div>
+          </div>
+    </div>    
+    <script src="../assets/js/activity.100.js"></script>
+</body>
+</html>

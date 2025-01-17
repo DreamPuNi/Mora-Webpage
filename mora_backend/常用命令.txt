@@ -1,0 +1,6 @@
+启动服务
+python manage.py runserver
+
+
+进入数据库交互环境
+python manage.py dbshell

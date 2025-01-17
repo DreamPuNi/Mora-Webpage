@@ -2,30 +2,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const libraryContainer = document.getElementById("slides");
 
     async function loadimgs() {
-        try{
-            const response = await fetch(`http://127.0.0.1:8000/api/imgs_info`);
-            const data = await response.json();
-            libraryContainer.innerHTML = "";
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/api/imgs_info/`);
+            const result = await response.json(); // 这里获取的是包含 status 和 data 的对象
+            const data = result.data; // 访问 data 数组
+
+            libraryContainer.innerHTML = ""; // 清空容器
+
             data.forEach((img) => {
+                const imgUrl = `http://127.0.0.1:8000${img.image_url}`;
                 const slide = `
                     <div class="slide">
-                        <img src="${img.data}" alt="${img.title}">
+                        <img src="${imgUrl}" alt="${img.title}">
                         <h2 class="title">${img.title}</h2>
                         <p>${img.introduce}</p>
                     </div>
                 `;
                 libraryContainer.insertAdjacentHTML("beforeend", slide);
-            })
-        }
-        catch (error){
+            });
+
+            initializeSlides(); // 确保内容加载完成后初始化
+        } catch (error) {
             console.error("Error loading books:", error);
         }
     }
 
-    loadimgs();
-})
-
-document.addEventListener("DOMContentLoaded", () => {
     const slides = document.querySelector('.slides');
     const prevButton = document.getElementById('prev');
     const nextButton = document.getElementById('next');
@@ -53,11 +54,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    initializeSlides();
-
-    // 如果动态加载幻灯片，使用 MutationObserver 监听
-    const observer = new MutationObserver(() => {
-        initializeSlides();
-    });
-    observer.observe(slides, { childList: true });
+    loadimgs();
 });

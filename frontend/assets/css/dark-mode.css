@@ -17,7 +17,8 @@ body.dark-mode nav a:hover {
     color: #ffffff;
 }
 
-body.dark-mode .icon-button img {
+body.dark-mode .icon-button img,
+body.dark-mode .language-toggle img {
     filter: invert(1); /* 完全反色 */
 }
 
@@ -26,10 +27,17 @@ body.dark-mode .section {
     color: #ddd;
 }
 
-body.dark-mode #language-select {
-    background-color: #333;
-    color: #fff;
+body.dark-mode #language-options,
+body.dark-mode #user-info {
+    background-color: #333 !important;
+    color: #dddddd;
 }
+
+body.dark-mode #user-info a{
+    background-color: #000000;
+    color: #dddddd;
+}
+
 
 /* 心魄页夜间模式 */
 body.dark-mode #images .slideshow{

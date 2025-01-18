@@ -3,6 +3,7 @@
 import json
 import asyncio
 from .models import *
+from .serializers import ChapterSerializer
 from .services.rate import *
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -71,6 +72,13 @@ class BooksUploadView(APIView):
                 "cover": book.cover.url
             }
         }, status=status.HTTP_201_CREATED)
+
+class ChapterListView(APIView):
+    '''用视图处理获取章节数据的请求'''
+    def get(self,request):
+        chapters = Chapter.objects.filter(parent=None) # 查询数据库，获取一级标题
+        serializer = ChapterSerializer(chapters, many=True) # 创建序列化器实例。查询集为chapters，包含多个对象，并转为JSON格式的列表
+        return Response(serializer.data) # 将序列化后的数据（一个 Python 列表，包含多个字典）封装到 DRF 提供的 Response 对象中，返回给客户端。
 
 # 模拟异步获取汇率的函数
 @csrf_exempt

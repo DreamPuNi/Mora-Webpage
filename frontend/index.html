@@ -113,30 +113,11 @@
     <!-- 智典页面 -->
     <div id="wisdom" class="section">
         <div class="sidebar">
-            <h3>章节导航</h3>
-            <ul>
-              <li onclick="scrollToSection('section1')">章节 1</li>
-              <li onclick="scrollToSection('section2')">章节 2</li>
-              <li onclick="scrollToSection('section3')">章节 3</li>
-            </ul>
-          </div>
-          <div class="content">
-            <h1 id="section1">章节 1</h1>
-            <p>这里是章节 1 的内容。</p>
-            <h1 id="section2">章节 2</h1>
-            <p>这里是章节 2 的内容。</p>
-            <h1 id="section3">章节 3</h1>
-            <p>这里是章节 3 的内容。</p>
-          </div>
-          <div class="toc">
-            <h3>快速定位</h3>
-            <ul>
-              <li><a href="#section1">章节 1</a></li>
-              <li><a href="#section2">章节 2</a></li>
-              <li><a href="#section3">章节 3</a></li>
-            </ul>
-          </div>
-    </div>
+          <h3>章节导航</h3>
+          <ul></ul>
+        </div>
+        <div class="content"></div>
+      </div>      
 
     <!-- 数据汇总 -->
     <div id="infocenter" class="section">
@@ -210,6 +191,13 @@
     <script src="assets/js/nav.js"></script>
     <script src="assets/js/images-loadimg.js"></script>
     <script src="assets/js/books-indocards.js"></script>
+    <script src="assets/js/wisdom.js"></script>
     <script src="assets/js/infocenter-canvas.js"></script>
+    <script type="module">
+        import { marked } from 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
+      
+        console.log(marked('**Hello World**')); // 测试 marked 是否正常工作
+      </script>
+      <!-- MarkDown渲染库 -->
 </body>
 </html>

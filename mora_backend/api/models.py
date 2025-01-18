@@ -41,6 +41,10 @@ class Books(models.Model):
 class Chapter(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
+    parent = models.ForeignKey(
+        'self', null=True,blank=True,on_delete=models.CASCADE,related_name='sub_chapters'
+    )
+    # 告诉Python，当需要以字符串形式表示一个Chapter实例时，应该返回title字段的值。
     def __str__(self):
         return self.title
 

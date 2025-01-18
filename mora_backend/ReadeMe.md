@@ -100,6 +100,28 @@
 }
 ```
 
+## 获取智典Chapter内容：/api/chapters/
+- 使用方法：`GET`
+- 链接地址：`http://127.0.0.1:8000/api/chapters/`
+- 返回数据：
+```json
+[
+    {
+        "id": 3,
+        "title": "逻辑学",
+        "content": "第一课：逻辑学",
+        "sub_chapters": [
+            {
+                "id": 2,
+                "title": "提问的艺术：从未知到启示",
+                "content": "### 提问的艺术：从未知到启示\r\n1. **意识到未知**：\r\n凡人的视...省略正文",
+                "sub_chapters": []
+            }
+        ]
+    }
+]
+```
+
 ### 获取当前用户信息：/users/user_info/
 - 使用方法：`GET`
 - 链接地址：`http://127.0.0.1:8000/users/user_info/`

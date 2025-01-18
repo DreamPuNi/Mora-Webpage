@@ -8,4 +8,5 @@ urlpatterns = [
     path('upload_book/', views.BooksUploadView.as_view(), name='upload_books'),
     path('imgs_info/', views.fetch_imgs_info, name='fetch_imgs_info'),
     path('upload_images/', views.ImagesUploadView.as_view(), name='upload_images'),
+    path('chapters/', views.ChapterListView.as_view(), name='chapter_list'),
 ]

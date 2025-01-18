@@ -37,6 +37,13 @@ class Books(models.Model):
     class Meta:
         db_table = 'Books'  # 指定表名
 
+# 智典数据管理
+class Chapter(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    def __str__(self):
+        return self.title
+
 ''' 这部分是定义模型，然后数据库会根据模型生成数据库表
 
 运行以下命令将模型同步到数据库：

@@ -1,24 +1,46 @@
 #wisdom{
     margin: 0;
     font-family: Arial, sans-serif;
-    height: 100vh;
+    height: auto;
     width: 100%;
     max-width: 1400px;
+    display: flex;
     justify-content: center; /* 水平居中 */
     margin: 0 auto;
     margin-top: 30px;
 }
+
+/* 左侧导航栏 */
 #wisdom .sidebar {
 width: 15%;
 background-color: #ffffff;
 border-right: 1px solid #ddd;
 overflow-y: auto;
 }
+
+#wisdom .sidebar ul {
+list-style: none;
+padding: 0;
+}
+
+#wisdom .sidebar ul li {
+padding: 8px 16px;
+cursor: pointer;
+}
+
+#wisdom .sidebar ul li:hover {
+background-color: #8b3dff;
+color: #ffffff;
+}
+
+/* 中间内容部分 */
 #wisdom .content {
 width: 70%;
 padding: 20px;
 overflow-y: auto;
 }
+
+/* 快速定位部分 */
 #wisdom .toc {
 width: 15%;
 background-color: #ffffff;
@@ -26,18 +48,9 @@ border-left: 1px solid #ddd;
 padding: 20px;
 overflow-y: auto;
 }
+
 #wisdom .sidebar h3,
 #wisdom .toc h3 {
 margin: 10px 0;
 }
-#wisdom .sidebar ul {
-list-style: none;
-padding: 0;
-}
-#wisdom .sidebar ul li {
-padding: 8px 16px;
-cursor: pointer;
-}
-#wisdom .sidebar ul li:hover {
-background-color: #eee;
-}
+
